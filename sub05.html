@@ -1,0 +1,275 @@
+<?php	
+	$mgrId = "press";
+
+	$pageSize = ($_REQUEST["select-list"])?$_REQUEST["select-list"]:10;
+	$cPage = $_REQUEST["cPage"];
+	$srchItem2 = $_REQUEST["srchItem2"];
+	$srchItem = $_REQUEST["srchItem"];
+	$srchWord = $_REQUEST["srchWord"];
+	if(!$sub){ $sub=""; } else { $sub = $_REQUEST["sub"]; }
+	if(!$arg_data){ $arg_data=""; } else { $arg_data = $_REQUEST["arg_data"]; }
+
+	$currPage = $cPage?$cPage:"1";
+	$currBlck = ceil($currPage / $blckSize);
+
+	$bbs_list = $bbs->getBbsList($arg_data);
+
+	$totPages = $bbs_list['totPages'];
+	$totBlcks = $bbs_list['totBlcks'];
+
+?>
+<script language="JavaScript">
+<!--
+function __submit() {
+	jsListBbs();
+}
+function jsListBbs() {
+	var _df = document.searchForm;
+
+	if(_df.srchWord.value=="") { alert("검색어를 입력하십시오."); _df.srchWord.focus(); return false;}
+
+	_df.cPage.value = "1";
+	_df.method = "get";
+	_df.submit();
+}
+function jsViewBbs(_bbsId) {
+	var _frm = document.mainForm;
+
+	_frm.bbsId.value = _bbsId;
+	_frm.method = "get";
+	_frm.submit();
+}
+
+//-->
+</script>	
+  <section class="sub-visual sub-visual05">
+    <p class="typo" data-aos="fade-up">언론에 소개 된 <b>별따러가자와 라이더 로그</b></p>
+  </section>
+
+  <section class="subContainer">
+    <h4 class="doc-title mt-100" data-aos="fade-up">NEWS</h4>
+<?php
+//echo $bbs_list['list']['sql'];
+?>
+	<div class="contents-width">
+      <div class="bbs-status">
+        <p class="count"><b>Total</b> : <?=$bbs_list['total'];?> ( <b><?=$currPage;?></b> / <?=$totPages;?> Page)</p>
+
+<form name="searchForm" method="get" action="?">
+<input type="hidden" name="url" value="<?=$url;?>">
+<input type="hidden" name="id" value="<?=$mgrId;?>">
+<input type="hidden" name="bbsId" value="">
+<input type="hidden" name="cPage" value="<?=$currPage;?>">
+<input type="hidden" name="cBlck" value="<?=$currBlck;?>">						       		
+<input type="hidden" name="subId" value="<?=$sub;?>">						       		
+		<div class="bbs-search">
+          <div class="inputbox ">
+            <select name="srchItem" id="srchItem">
+              <!--option value="all">전체</option-->
+              <option value="bbs_subject">제목</option>
+              <option value="bbs_name">작성자</option>
+            </select>
+          </div>
+          <div class="inputbox inputtext">
+            <input type="text" name="srchWord" id="srchWord" value="<?=$srchWord;?>" placeholder="검색어를 입력하세요.">
+            <button type="button" class="btn-search" onclick="javascript:jsListBbs();"><span>검색</span></button>
+          </div>
+        </div>
+</form>
+      </div>
+
+<form name="mainForm" method="get" action="?">
+<input type="hidden" name="url" value="press_view">
+<input type="hidden" name="id" value="<?=$mgrId;?>">
+<input type="hidden" name="bbsId" value="">
+<input type="hidden" name="cPage" value="<?=$currPage;?>">
+<input type="hidden" name="cBlck" value="<?=$currBlck;?>">						       		
+<input type="hidden" name="subId" value="<?=$sub;?>">						       		
+<input type="hidden" name="srchItem2" value="<?=$srchItem2;?>">						       		
+<input type="hidden" name="srchItem" value="<?=$srchItem;?>">						       		
+<input type="hidden" name="srchWord" value="<?=$srchWord;?>">						       		
+      <div class="bbs-list">
+<?php
+	for($i = 0; $i < $bbs_list['list']['total']; $i++) { 
+?>
+        <div class="row">
+          <p class="b-num"><?=$bbs_list['list'][$i]['no'];?></p>
+          <p class="b-thumb">
+            <a href="javascript: jsViewBbs('<?=$bbs_list['list'][$i]['bbs_id'];?>','bbsview');"><img src="<?=$uploadPath;?>/bbs/<?=$bbs_list['list'][$i]['bbs_main_img'];?>" alt="<?=$bbs_list['list'][$i]['bbs_subject'];?>" onerror="this.src='img/no-image.png'" ></a>
+          </p>
+          <div class="b-content">
+            <a href="javascript: jsViewBbs('<?=$bbs_list['list'][$i]['bbs_id'];?>','bbsview');">
+              <p class="b-tit"><?=$bbs_list['list'][$i]['bbs_subject'];?></p>
+              <p class="b-cnt dot"><?=$bbs_list['list'][$i]['bbs_notice'];?></p>
+            </a>
+            <ul class="b-desc">
+              <li class="b-writer"><?=$bbs_list['list'][$i]['bbs_name'];?></li>
+              <li class="b-date"><?=$bbs_list['list'][$i]['create_date'];?></li>
+              <li class="b-view"><span>VIEW</span><?=$bbs_list['list'][$i]['bbs_view_no'];?></li>
+            </ul>
+          </div>
+        </div>
+<?php	} ?>
+<?php /*
+		<div class="row">
+          <p class="b-num">5</p>
+          <p class="b-thumb">
+            <a href="#"><img src="img/press_thumb_sample.png" alt="sample"></a>
+          </p>
+          <div class="b-content">
+            <a href="#">
+              <p class="b-tit">디캠프 5월 디데이, ‘별따러가자’·‘리하베스트’ 공동 우승</p>
+              <p class="b-cnt dot">디캠프(센터장 김홍일)가 지난 28일 개최한 디데이에서 별따러가자와 리하베스트가 공동 우승을 차지했다.5월 디데이에는 광주광역시, 광주창조경제혁신센터가
+                공동
+                주관사로
+                참여했다.
+                우승팀은 디캠프 입주 및 투자검토 기회와 함께 최대 9천만원의 정부 사업지원금을 받는다. 또 광주광역시와 공공사업을 진행해볼 수 있는 지방정부 연계사업 담당 기회, 광주시 소재의 사무공간
+                무료
+                입주 혜택도 제공된다.디캠프(센터장 김홍일)가 지난 28일 개최한 디데이에서 별따러가자와 리하베스트가 공동 우승을 차지했다.5월 디데이에는 광주광역시, 광주창조경제혁신센터가
+                공동
+                주관사로
+                참여했다.
+                우승팀은 디캠프 입주 및 투자검토 기회와 함께 최대 9천만원의 정부 사업지원금을 받는다. 또 광주광역시와 공공사업을 진행해볼 수 있는 지방정부 연계사업 담당 기회, 광주시 소재의 사무공간
+                무료
+                입주 혜택도 제공된다.디캠프(센터장 김홍일)가 지난 28일 개최한 디데이에서 별따러가자와 리하베스트가 공동 우승을 차지했다.5월 디데이에는 광주광역시, 광주창조경제혁신센터가
+                공동
+                주관사로
+                참여했다.
+                우승팀은 디캠프 입주 및 투자검토 기회와 함께 최대 9천만원의 정부 사업지원금을 받는다. 또 광주광역시와 공공사업을 진행해볼 수 있는 지방정부 연계사업 담당 기회, 광주시 소재의 사무공간
+                무료
+                입주 혜택도 제공된다.
+              </p>
+            </a>
+            <ul class="b-desc">
+              <li class="b-writer">관리자</li>
+              <li class="b-date">2020-09-16</li>
+              <li class="b-view"><span>VIEW</span>33</li>
+            </ul>
+          </div>
+
+        </div>
+        <div class="row">
+          <p class="b-num">5</p>
+          <p class="b-thumb">
+            <a href="#"><img src="img/press_thumb_sample.png" alt="sample"></a>
+          </p>
+          <div class="b-content">
+            <a href="#">
+              <p class="b-tit">디캠프 5월 디데이, ‘별따러가자’·‘리하베스트’ 공동 우승디캠프 5월 디데이, ‘별따러가자’·‘리하베스트’ 공동 우승</p>
+              <p class="b-cnt dot">디캠프(센터장 김홍일)가 지난 28일 개최한 디데이에서 별따러가자와 리하베스트가 공동 우승을 차지했다.5월 디데이에는 광주광역시, 광주창조경제혁신센터가
+                공동
+                주관사로
+                참여했다.
+              </p>
+            </a>
+            <ul class="b-desc">
+              <li class="b-writer">관리자</li>
+              <li class="b-date">2020-09-16</li>
+              <li class="b-view"><span>VIEW</span>33</li>
+            </ul>
+          </div>
+
+        </div>
+        <div class="row">
+          <p class="b-num">5</p>
+          <p class="b-thumb">
+            <a href="#"><img src="img/press_thumb_sample.png" alt="sample"></a>
+          </p>
+          <div class="b-content">
+            <a href="#">
+              <p class="b-tit">디캠프 5월 디데이, ‘별따러가자’·‘리하베스트’ 공동 우승</p>
+              <p class="b-cnt dot">디캠프(센터장 김홍일)가 지난 28일 개최한 디데이에서 별따러가자와 리하베스트가 공동 우승을 차지했다.5월 디데이에는 광주광역시, 광주창조경제혁신센터가
+                공동
+                주관사로
+                참여했다.
+                우승팀은 디캠프 입주 및 투자검토 기회와 함께 최대 9천만원의 정부 사업지원금을 받는다. 또 광주광역시와 공공사업을 진행해볼 수 있는 지방정부 연계사업 담당 기회, 광주시 소재의 사무공간
+                무료
+                입주 혜택도 제공된다.디캠프(센터장 김홍일)가 지난 28일 개최한 디데이에서 별따러가자와 리하베스트가 공동 우승을 차지했다.5월 디데이에는 광주광역시, 광주창조경제혁신센터가
+                공동
+                주관사로
+                참여했다.
+                우승팀은 디캠프 입주 및 투자검토 기회와 함께 최대 9천만원의 정부 사업지원금을 받는다. 또 광주광역시와 공공사업을 진행해볼 수 있는 지방정부 연계사업 담당 기회, 광주시 소재의 사무공간
+                무료
+                입주 혜택도 제공된다.디캠프(센터장 김홍일)가 지난 28일 개최한 디데이에서 별따러가자와 리하베스트가 공동 우승을 차지했다.5월 디데이에는 광주광역시, 광주창조경제혁신센터가
+                공동
+                주관사로
+                참여했다.
+                우승팀은 디캠프 입주 및 투자검토 기회와 함께 최대 9천만원의 정부 사업지원금을 받는다. 또 광주광역시와 공공사업을 진행해볼 수 있는 지방정부 연계사업 담당 기회, 광주시 소재의 사무공간
+                무료
+                입주 혜택도 제공된다.
+              </p>
+            </a>
+            <ul class="b-desc">
+              <li class="b-writer">관리자</li>
+              <li class="b-date">2020-09-16</li>
+              <li class="b-view"><span>VIEW</span>33</li>
+            </ul>
+          </div>
+
+        </div>
+        <div class="row">
+          <p class="b-num">5</p>
+          <p class="b-thumb">
+            <a href="#"><img src="img/press_thumb_sample.png" alt="sample"></a>
+          </p>
+          <div class="b-content">
+            <a href="#">
+              <p class="b-tit">디캠프 5월 디데이, ‘별따러가자’·‘리하베스트’ 공동 우승디캠프 5월 디데이, ‘별따러가자’·‘리하베스트’ 공동 우승</p>
+              <p class="b-cnt dot">디캠프(센터장 김홍일)가 지난 28일 개최한 디데이에서 별따러가자와 리하베스트가 공동 우승을 차지했다.5월 디데이에는 광주광역시, 광주창조경제혁신센터가
+                공동
+                주관사로
+                참여했다.
+              </p>
+            </a>
+            <ul class="b-desc">
+              <li class="b-writer">관리자</li>
+              <li class="b-date">2020-09-16</li>
+              <li class="b-view"><span>VIEW</span>33</li>
+            </ul>
+          </div>
+
+        </div>
+        <div class="row">
+          <p class="b-num">5</p>
+          <p class="b-thumb">
+            <a href="#"><img src="img/press_thumb_sample.png" alt="sample"></a>
+          </p>
+          <div class="b-content">
+            <a href="#">
+              <p class="b-tit">디캠프 5월 디데이, ‘별따러가자’·‘리하베스트’ 공동 우승</p>
+              <p class="b-cnt dot">디캠프(센터장 김홍일)가 지난 28일 개최한 디데이에서 별따러가자와 리하베스트가 공동 우승을 차지했다.5월 디데이에는 광주광역시, 광주창조경제혁신센터가
+                공동
+                주관사로
+                참여했다.
+                우승팀은 디캠프 입주 및 투자검토 기회와 함께 최대 9천만원의 정부 사업지원금을 받는다. 또 광주광역시와 공공사업을 진행해볼 수 있는 지방정부 연계사업 담당 기회, 광주시 소재의 사무공간
+                무료
+                입주 혜택도 제공된다.디캠프(센터장 김홍일)가 지난 28일 개최한 디데이에서 별따러가자와 리하베스트가 공동 우승을 차지했다.5월 디데이에는 광주광역시, 광주창조경제혁신센터가
+                공동
+                주관사로
+                참여했다.
+                우승팀은 디캠프 입주 및 투자검토 기회와 함께 최대 9천만원의 정부 사업지원금을 받는다. 또 광주광역시와 공공사업을 진행해볼 수 있는 지방정부 연계사업 담당 기회, 광주시 소재의 사무공간
+                무료
+                입주 혜택도 제공된다.디캠프(센터장 김홍일)가 지난 28일 개최한 디데이에서 별따러가자와 리하베스트가 공동 우승을 차지했다.5월 디데이에는 광주광역시, 광주창조경제혁신센터가
+                공동
+                주관사로
+                참여했다.
+                우승팀은 디캠프 입주 및 투자검토 기회와 함께 최대 9천만원의 정부 사업지원금을 받는다. 또 광주광역시와 공공사업을 진행해볼 수 있는 지방정부 연계사업 담당 기회, 광주시 소재의 사무공간
+                무료
+                입주 혜택도 제공된다.
+              </p>
+            </a>
+            <ul class="b-desc">
+              <li class="b-writer">관리자</li>
+              <li class="b-date">2020-09-16</li>
+              <li class="b-view"><span>VIEW</span>33</li>
+            </ul>
+          </div>
+        </div>
+*/ ?>
+      </div>
+</form>
+
+<?php include_once ("include/pager.html"); ?>
+    </div>
+  </section>
+

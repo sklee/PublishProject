@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서비스용 개인 정보처리 방침</title>  
+    <style>
+        html,body {
+        margin: 0;
+        }
+        hr {
+            margin : 35px 0px ;
+        }
+
+.top{
+    width: 100%;
+    height: 50px;
+    background: rgb(255, 157, 77);
+    color: #fff;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 1.4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.wrap{
+    padding:30px
+}
+.top_title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.334;
+}
+.content_title {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+.content_semi_title {
+
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.334;
+    margin-bottom: 20px;
+}
+table {
+    border: 1px solid rgb(131, 131, 131);
+    font-size: .9em;
+    box-shadow: 0 2px 5px rgba(0,0,0,.25);
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 25px 0 ;
+  }
+
+  td,th{
+    padding:15px;
+  }
+  
+    </style>
+</head>
+<script>
+    let index = ""
+    function Listener(obj) {   
+    index = obj.value
+    location.href= obj.value + ".html"
+    }
+ </script>
+<body>
+    
+    <div class="top">
+       서비스 용
+    </div>
+    <div class="wrap">
+        <select style="margin-bottom:25px;" onchange="Listener(this)">
+            <option value="220101" >2022년 1월 1일</option>
+            <option value="220805" selected >2022년 8월 5일</option>
+        </select>
+        <div class="top_title">서비스용 개인 정보처리 방침</div>  
+        <div class="content"> 
+            <p>
+            ㈜ 별따러가자(이하 ‘회사’)는 「개인정보 보호법」, 「정보통신망 이용촉진 및 정보보호 등에 관한 법률」(이하 ‘정보통신망법’) 등 서비스 제공자가 준수하여야 할 관련 법령상의 개인정보보호 규정을 준수하며 최소한의 정보만을 필요한 시점에 수집하고, 수집하는 정보는 고지한 범위 내에서만 사용하며, 사전 동의 없이 그 범위를 초과하여 이용하거나 외부에 공개하지 않는 등 이용자의 권익 보호에 최선을 다하고 있습니다. 
+            이에 따라 회사는 이용자의 개인정보를 보호하고 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여 다음과 같이 개인정보 처리방침을 수립하여 공개하며, 개인정보처리방침을 개정하는 경우 개정 이유 및 내용에 관하여 웹사이트 등을 통하여 고지합니다.
+            </p>
+        </div>
+        <hr>
+
+        <div class="middle">
+            <div class="set_1">
+                <div class="content_title">개인정보 수집 항목 및 방법</div>    
+                <div class="content">
+                    <p>회사는 다음의 개인정보 항목을 처리하고 있습니다.</p>
+                </div>
+                <table border="1" >
+                    <colgroup>
+                    <col style="width:16%">
+                    <col style="width:42%">
+                    <col>
+                    </colgroup>
+                    <thead style="background-color: rgb(241, 241, 241);">                            
+                        <th> 서비스 </th>
+                        <th> 목적 </th>
+                        <th> 항목 </th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="5">라이더로그</td>
+                            <td >
+                                - 이용자 확인 및 이용동의 확인 및 서비스 제공을 위한 기본정보<br/>
+                                - 모션센서 Device 인증 </td>
+                            <td >- (필수) 이름, 생년월일, 핸드폰번호, 통신사, 서비스 관리번호, 서비스 이용기록, Device ID (IMEI, 모션센서 ID), 이용자의 주행정보 (GPS 궤적 및 Trip 데이터, 위험운전 데이터, 사고 데이터), 이용자의 운행정보로부터 생성되는 운전성향정보  
+                                <br/>
+                                - (선택) 차량 종류, 배기량
+                            </td>
+                        </tr>
+                        <tr>                                
+                            <td >긴급구조 서비스 제공</td>
+                            <td >(필수) 이름, 생년월일, 핸드폰번호, 개인위치정보, 사고정보 </td>
+                        </tr>
+                        <tr >                                
+                            <td>운전습관 피드백 제공</td>
+                            <td>(필수) 이름, 생년월일, 핸드폰번호, 통신사, 서비스 관리번호, 서비스 이용기록, Device ID (IMEI, 모션센서 ID), 이용자의 주행정보 (GPS 궤적 및 Trip 데이터, 위험운전 데이터, 사고 데이터), 이용자의 운행정보로부터 생성되는 운전성향정보 </td>
+                        </tr>
+                        <tr >                                
+                            <td>마케팅 및 광고성 정보 제공</td>
+                            <td>(선택) 서비스 이용 기록, 행태정보(ADID, IDFA)
+                                <br/>* 재화나 서비스의 홍보판매권유 등 목적으로 정보주체에게 연락할 수 있음</td>
+                        </tr>
+                        <tr >                                
+                            <td>고객 서비스 요청에 대한 응대 및 처리, 기타 문의</td>
+                            <td>(필수) 이름, 생년월일, 핸드폰번호, 서비스 관리번호, Device ID (IMEI, 모션센서 ID)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="content_semi_title">
+                    회사는 아래와 같은 방법으로 개인정보를 수집하고 있습니다.
+                </div>
+                <ul>
+                    <li>회사는 서비스 회원가입, 서비스 이용과정 및 고객 서비스 요청에 대한 응대 등에서 이용자가 직접 입력한 정보와 이용과정에서 생성되는 정보를 직접 및 수집하는 도구를 통한 방법 등으로 개인정보를 수집합니다.</li>
+                    <li>회사와 제휴한 외부 기업이나 단체로부터 개인정보를 제공받을 수 있으며, 이러한 경우에는 제휴사에서 이용자에게 개인정보 제공 동의를 받은 후 수집합니다.</li>
+                    <li>회사는 원칙적으로 이용자의 동의없이 민감정보를 수집하지 않습니다. 또한 법정 대리인의 동의가 필요한 만14세 미만 아동의 개인정보 및 위치정보는 수집하지 않습니다. </li>
+                </ul>                
+            </div>
+            <hr>
+            <div class="set_2">
+                <div class="content_title">개인정보 수집 목적</div>    
+                <div class="content">        
+                   <p>회사는 다음의 목적을 위하여 개인정보를 수집합니다. 수집한 개인정보는 다음의 목적 이외의 용도로는 이용되지 않습니다.</p>   
+                    <ul>
+                        <li>이용자 확인 및 이용동의 확인 및 서비스 제공을 위한 기본정보 등</li>
+                        <li>긴급구조 서비스 제공 등</li>
+                        <li>운전습관 피드백 제공 등</li>
+                        <li>마케팅 및 광고성 정보 제공</li>
+                        <li>고객 서비스 요청에 대한 응대 및 처리, 기타 문의</li>
+                    </ul>
+                </div>
+            </div>        
+            <hr>
+            <div class="set_3">
+                <div class="content_title">개인정보 보유 기간</div>    
+                <div class="content">
+                    <p>회사는 원칙적으로 개인정보 수집·이용 목적이 달성되거나 동의 철회 및 이용자 탈퇴 시 지체없이 파기합니다. 서비스 이용 계약 체결 시(이용자 가입 시)부터 서비스 이용 계약 해지(탈퇴신청, 동의철회 포함)까지 입니다. 법령에서 정의하는 기간(1년)에 재이용하지 아니하는 이용자의 개인정보를 파기하거나 다른 이용자의 개인정보와 분리하여 별도로 저장·관리합니다. 단, 기간 만료 30일 전까지 개인정보가 파기되거나 분리되어 저장·관리되는 사실과 기간 만료일 및 해당 개인정보의 항목을 이메일·서면·모사전송·전화 또는 이와 유사한 방법 중 어느 하나의 방법으로 이용자에게 알립니다. 다만, 관계 법령에 규정되거나 이용자에게 동의를 받은 경우는 예외로 합니다.</p>
+                    <div class="content_semi_title">계약 또는 청약철회 등에 관한 기록</div>
+                        <ul>
+                            <li>
+                                보존근거: 「전자상거래 등에서의 소비자보호에 관한 법률」 제6조 및 동시행령 제6조
+                            </li>
+                            <li>
+                                보존기간: 5년
+                            </li>
+                        </ul>    
+                        <div class="content_semi_title">대금결제 및 재화 등의 공급에 관한 기록</div>
+                        <ul>
+                            <li>
+                                보존근거: 「전자상거래 등에서의 소비자보호에 관한 법률」 제6조 및 동시행령 제6조
+                            </li>
+                            <li>
+                                보존기간: 5년
+                            </li>
+                        </ul>
+                        <div class="content_semi_title"> 소비자의 불만 또는 분쟁처리에 관한 기록</div>
+                        <ul>
+                            <li>
+                                보존근거: 「전자상거래 등에서의 소비자보호에 관한 법률」 제6조 및 동시행령 제6조
+                            </li>
+                            <li>
+                                보존기간: 3년
+                            </li>
+                        </ul>
+                        <div class="content_semi_title">표시·광고에 관한 기록</div>
+                        <ul>
+                            <li>
+                                보존근거: 「전자상거래 등에서의 소비자보호에 관한 법률」 제6조 및 동시행령 제6조
+                            </li>
+                            <li>
+                                보존기간: 6개월
+                            </li>
+                        </ul>
+                        <div class="content_semi_title">컴퓨터 통신 또는 인터넷 접속 자료</div>
+                        <ul>
+                            <li>
+                                보존근거: 「통신비밀보호법」 제15조의2 및 동시행령 제41조
+
+                            </li>
+                            <li>
+                                보존기간: 3개월
+                            </li>
+                        </ul>
+                        <div class="content_semi_title">신용정보의 수집/처리 및 이용 등에 관한 기록</div>
+                        <ul>
+                            <li>
+                                보존근거: 전자상거래 등에서의 소비자보호에 관한 법률」 제20조 및 동시행령 제30조
+                            </li>
+                            <li>
+                                보존기간: 3년
+                            </li>
+                        </ul>
+                </div>
+            </div>             
+            <hr>   
+            <div class="set_4">
+                <div class="content_title">개인정보의 파기</div>    
+                <div class="content">
+                    <p>
+                        회사는 원칙적으로 개인정보의 수집·이용 목적이 달성되면 지체없이(5일이내) 해당 개인정보를 파기합니다. 다만, 이용자으로부터 동의받은 개인정보 보유기간이 경과하거나 처리목적이 달성되었음에도 불구하고 다른 법령에 따라 개인정보를 계속 보존하여야 하는 경우에는 해당 개인정보를 별도 분리(데이터베이스 분리 또는 테이블 분리) 보관하여 보존합니다. 회사의 구체적인 개인정보 파기절차, 기한 및 방법은 다음과 같습니다.
+                    </p>
+                    <div class="content_semi_title">파기절차</div>
+                        <ul>
+                            <li>
+                                이용자가 회사에 제공한 개인정보는 수집·이용 목적이 달성된 후에는 파기할 개인정보를 선정하고, 회사의 개인정보 보호책임자의 승인을 받아 개인정보를 파기합니다.
+                            </li>                            
+                        </ul>
+                        <div class="content_semi_title">파기기한</div>
+                        <ul>
+                            <li>
+                                보유기간이 경과된 개인정보는 보유기간 종료일로부터 5영업일 이내 개인정보를 파기합니다.
+                            </li>                            
+                            <li>
+                                해당 서비스의 폐지, 사업의 종료 등 그 개인정보가 불필요하게 되었을 때에는 개인정보 처리가 불필요한 것으로 인정되는 날로부터 5영업일 이내 개인정보를 파기합니다.
+                            </li>
+                        </ul>
+                        <div class="content_semi_title">파기방법</div>
+                        <ul>
+                            <li>
+                                전자적 파일 형태로 저장되는 개인정보는 기록을 재생할 수 없는 기술적 방법을 사용하여 파기합니다.
+                            </li>                            
+                            <li>
+                                종이에 출력된 개인정보는 분쇄기로 분쇄하거나 소각을 통하여 파기합니다.
+                            </li>
+                        </ul>
+                </div>
+            </div>             
+            <hr>   
+            <div class="set_5">
+                <div class="content_title">개인정보 처리 위탁</div>    
+                <div class="content">
+                    <p>회사는 원활한 서비스 제공과 효과적인 업무 처리를 위하여 다음과 같이 개인정보 처리를 위탁하고 있습니다.</p>
+                    <table border="1" >
+                        <colgroup>
+                        <col style="width:16%">
+                        <col style="width:42%">
+                        <col>
+                        </colgroup>
+                        <thead style="background-color: rgb(241, 241, 241);">                         
+                            <th>제공받는자</th>
+                            <th >제공목적</th>
+                            <th >제공학목</th>
+                            <th >보유 및 이용기간</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>NHN 클라우드</td>
+                                <td>문자메시지 (SMS, LMS) 발송</td>
+                                <td>이름, 핸드폰번호 <br/>
+                                    Device ID, 사고정보</td>
+                                <td>회원탈퇴 시 또는  위탁 계약 종료시 까지</td>                                
+                            </tr>
+                            <tr>         
+                                <td>이용자 소속 
+                                    지점장</td>
+                                <td>라이더 운전습관 피드백 제공</td>
+                                <td>이름, 생년월일, 핸드폰번호<br/>
+                                    Device ID, 주행정보</td>
+                                <td>회원탈퇴 시 또는  위탁 계약 종료시 까지</td>     
+                            </tr>                                                        
+                        </tbody>
+                    </table>
+                    <p>회사는 위탁계약 체결 시 「개인정보 보호법」 및 「정보통신망법」에 따라 위탁 업무 수행목적외 개인정보처리금지, 기술적·관리적 보호조치, 재위탁 제한, 수탁자에 대한 관리·감독, 손해배상 등 책임에 관한 사항을 계약서 등 문서에 명시하고, 수탁자가 개인정보를 안전하게 처리하는지를 감독하고 있습니다.
+                        위탁 업무의 내용이나 수탁자가 변경될 경우에는 지체없이 본 개인정보 처리방침을 통하여 공개하도록 하겠습니다.</p>
+                </div>
+            </div>
+            <hr>
+            <div class="set_6">
+                <div class="content_title">개인정보 제3자 제공</div>    
+                <div class="content">
+                    <p>회사는 이용자의 개인정보를 본 방침 제2조 ‘개인정보 수집 목적’에서 명기한 범위 내에서만 사용하며, 원칙적으로 이용자의 개인정보를 제3자에게 제공하지 않습니다. 다만, 다음에서 정하는 경우에는 예외로 합니다.</p>
+                    <ul><li>수사, 조사의 목적으로 법령에 정해진 절차와 방법에 따라 수사기관의 요구가 있는 경우</li>
+                    <li>이용자의 급박한 생명·신체 위험을 초래하는 사건·사고 등의 긴급상황이 발생하는 경우</li>
+                    </ul>
+                    <table border="1" >
+                        <colgroup>
+                        <col style="width:20%">
+                        <col style="width:30%">
+                        <col>
+                        </colgroup>
+                        <thead style="background-color: rgb(241, 241, 241);">                         
+                            <th>분류</th>
+                            <th >근거법령</th>
+                            <th >제공기관</th>
+                            <th >제공되는 개인정보</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>긴급 구조요청 등 대응</td>
+                                <td>위치정보법</td>
+                                <td>소방관서</td>
+                                <td>개인위치정보, 사고정보</td>                                
+                            </tr>                                                                                
+                        </tbody>
+                    </table>
+                    <p>이용자가 제3자 정보 제공에 동의하여, 회사가 개인정보를 제3자에게 제공하게 될 경우 이용자로부터 필수 고지사항(개인정보를 제공받는 자, 개인정보를 제공받는 자의 개인정보 이용목적, 제공하는 개인정보의 항목, 개인정보를 제공받는 자의 보유 및 이용기간)을 알리고 동의를 받거나, 관련 법령이 허용한 범위 내에만 개인정보를 제3자에게 제공합니다.</p>
+                </div>
+            </div>
+            <hr>
+            <div class="set_7">
+                <div class="content_title">개인정보의 안전성 확보 조치</div>    
+                <div class="content">
+                    <p>회사는 개인정보의 안전성 확보를 위해 다음과 같이 관리적/물리적/기술적 조치를 취하고 있습니다.</p>
+                    <div class="content_semi_title">1. 관리적 조치</div>
+                    <ul>
+                        <!-- <li>회사는 고객님의 개인정보에 대한 접근 및 관리에 필요한 절차 등을 마련하여 소속 직원으로 하여금 이를 숙지하고 준수하도록 하고있으며, 개인정보를 처리하는 직원을 대상으로 새로운 보안 기술 습득 및 개인정보보호 의무 등에 관해 정기적인 사내 교육 및 외부 위탁교육을 실시하고 있습니다.</li> -->
+                        <li>개인정보 취급 관련 자체 감사 실시, 개인정보취급자 교육, 내부관리계획 수립 및 이행 등</li>
+                    </ul>
+                    <div class="content_semi_title">2. 물리적 조치</div>
+                    <ul><li>전산실 또는 통신실 등의 비인가자의 접근통제, 개인정보가 포함된 서류, 보조저장매체 등을 잠금장치가 있는 안전한 장소에 보관 등</li></ul>
+                    <div class="content_semi_title">3. 기술적 조치</div>
+                    <ul><li>개인정보처리시스템 등의 접근권한 관리, 정보보호시스템 설치, 백신 프로그램 설치 등</li></ul>
+                    <div class="content_semi_title">4. 개인정보 취급 관련 안정성 확보를 위해 정기적<span style="color: red;">(연 1회)</span>으로 자체 감사를 실시하고 있습니다.</div>                    
+                    <div class="content_semi_title">5. 주요 직무자 및 개인정보취급자는 업무 필요성에 따라 지정을 최소화하는 등 관리방안을 수립·시행하고 있으며, 연1회 이상 정기적 교육 수행과 관련 법규 및 규정의 중대한 변경 시 이에 대한 추가 교육을 수행하고 있습니다.</div>
+                    <!-- <div class="content_semi_title">6. 개인정보의 안전한 처리를 위하여 매년 내부관리계획을 수립·시행하고 있습니다.</div>
+                    <div class="content_semi_title">7. 이용자 개인정보의 비밀번호는 암호화 저장 및 관리되어 본인만이 알 수 있으며, 중요한 데이터는 파일 및 전송 데이터를 암호화하거나 파일 잠금 기능을 사용하는 등의 별도 보안 기능을 사용하고 있습니다.</div>
+                    <div class="content_semi_title">8. 개인정보처리시스템의 접속기록은 최소 1년 이상 보관·관리하고 있으며, 다만, 5만명 이상의 정보주체에 관하여 개인정보를 추가하거나, 고유식별정보 또는 민감정보를 처리하는 경우에는 2년 이상 보관·관리하고 있습니다. 또한, 접속기록이 위변조 및 도난, 분실되지 않도록 보안기능을 사용하고 있습니다.</div>
+                    <div class="content_semi_title">9. 개인정보를 처리하는 데이터베이스시스템에 대한 접근권한의 부여·변경·말소를 통하여 개인정보에 대한 접근통제를 위한 필요한 조치를 하고 있으며 침입차단시스템을 이용하여 외부로부터의 무단 접근을 통제하고 있습니다.</div> -->
+                    
+                </div>
+            </div>
+            <hr>
+            <div class="set_8">
+                <div class="content_title">개인정보 자동 수집 장치의 설치·운영 및 거부에 관한 사항</div>    
+                <div class="content">
+                    <p></p>
+                    <div class="content_semi_title">1. 쿠키(cookie)의 정의</div>
+                    <ul>
+                        <li>웹사이트를 운영하는 것에 이용되는 서버가 이용자의 컴퓨터로 전송하는 아주 작은 텍스트 파일로서 이용자의 컴퓨터 하드디스크에 저장되고 있습니다.</li>
+                        <li>이용자가 어플리케이션 서비스를 이용하거나 사이트를 방문하였을 때 이용자의 단말기에 저장되는 소량의 정보이며, 이용자가 사이트를 재방문했을 때 읽을 수 있는 정보를 저장합니다.</li>
+                    </ul>
+                    <div class="content_semi_title">2. 쿠키(cookie) 사용 목적</div>
+                    <ul>
+                        <li>보안접속</li>
+                        <li>이용자의 접속 세션 유지</li>
+                        <li>서비스 및 사이트에 대한 이용·방문 행태 분석</li>
+                    </ul>
+                    <div class="content_semi_title">3. 쿠키(cookie) 설치/운영 및 거부</div>
+                    <ul>
+                        <li>이용자가 웹을 통해 서비스를 이용하는 경우 브라우저의 옵션을 설정함으로써 모든 쿠키를 허용하거나, 쿠키가 저장될 때마다 확인을 하거나, 모든 쿠키의 저장을 거부할 수도 있습니다. 다만, 어플리케이션의 경우 쿠키 설정 옵션이 지원되지 않을 수 있습니다. (※ 쿠키의 저장을 거부할 경우, 로그인이 필요한 일부 서비스 이용에 제한이 생길 수 있습니다.)</li>
+                    </ul>
+                    <div class="content_semi_title">4. 쿠키(cookie) 거부 방법 예시</div>                    
+                    <ul>
+                        <li>Internet Explorer: 브라우저 우측 상단 ‘도구 > 인터넷 옵션 > 개인정보 > 직접 설정’</li>
+                        <li>Chrome: 브라우저 우측 상단 ‘Chrome 맞춤설정 및 제어 아이콘 > 설정 > 화면 하단의 고급 설정 표시 > 개인정보 > 콘텐츠 설정 > 쿠키’</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="set_9">
+                <div class="content_title">개인정보보호책임자 및 관련 부서</div>    
+                <div class="content">
+                    <p>회사는 개인정보 처리에 관한 업무를 총괄해서 책임지고, 개인정보 처리와 관련한 이용자의 불만처리 및 피해구제 등을 위하여 아래와 같이 개인정보보호책임자를 지정하고 있습니다. 회사의 서비스(또는 사업)을 이용하면서 발생한 모든 개인정보 보호 관련 문의, 불만처리, 피해구제 등에 관한 사항을 개인정보 보호책임자 및 담당부서로 문의하실 수 있습니다. 회사는 이용자의 문의에 대해 지체없이 답변 및 처리해 드릴 것입니다.
+                    </p>
+                    <div class="content_semi_title">개인정보 보호책임자</div>
+                    <ul>
+                        <li> 부서명 : 종합연구소</li>
+                        <li> 성명: 김경목</li>
+                        <li> 연락처: 070-4415-2662, support@star-pickers.com</li>
+                        <li> ※ 개인정보 보호 담당부서로 연결됩니다.</li>
+                    </ul>
+                    <div class="content_semi_title">개인정보 보호담당자</div>
+                    <ul>
+                        <li> 부서명 : 종합연구소</li>
+                        <li> 성명: 정성욱</li>
+                        <li> 연락처: 070-4415-2662, support@star-pickers.com</li>
+                        <li> ※ 개인정보 보호 담당부서로 연결됩니다.</li>
+                    </ul>
+                    <div class="content_semi_title">개인정보 열람청구 접수·처리 부서</div>
+                    <ul>
+                        <li> 부서명 : 종합연구소</li>
+                        <li> 성명: 정성욱</li>
+                        <li> 연락처: 070-4415-2662, support@star-pickers.com</li>                        
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="set_10">
+                <div class="content_title">정보주체와 법정대리인의 권리·의무 및 그 행사방법</div>    
+                <div class="content">
+                    <ul>
+                        <li> 정보주체는 언제든지 수집 정보에 대하여 수정, 동의철회, 삭제, 열람요청 등을 요청하실 수 있습니다. 다만, 동의철회/삭제 시 서비스의 일부 또는 전부 이용이 제한될 수 있습니다.</li>
+                        <li> (조회/정정/삭제/동의철회) 개인정보의 정정 및 삭제 요구는 다른 법령에서 그 개인정보가 수집 대상으로 명시되어 있는 경우에는 그 삭제를 요구할 수 없습니다. 또한, 합리적인 사유로 잘못된 개인정보를 제3자에게 이미 제공한 경우, 정정 처리의 결과를 지체없이 제3자에게 통지하여 정정하도록 조치합니다. <br/>다만, 수집 정보에 대한 동의철회/삭제 시 일부 또는 전부 이용이 제한될 수 있으며, 다른 법령에 따라 수집하는 정보의 경우에는 동의철회가 어려울 수 있습니다.</li>
+                        <li> (이용자탈퇴) 이용자의 탈퇴를 요청하실 수 있으며, 요청 즉시 탈퇴 처리를 합니다.</li>
+                        <li> 상담문의</li>
+                        <li> ‘1’에 따른 권리 행사는 정보주체의 법정대리인이나 위임을 받은 자 등 대리인을 통하여 하실 수 있습니다. 이 경우, 개인정보보호법 시행규칙 별지 제11호 서식에 따른 위임장을 제출하여야 합니다.</li>
+                        <li> 회사는 정보주체 권리에 따른 열람의 요구, 정정·삭제의 요구, 처리정지의 요구 시 열람 등 요구를 한 자가 본인이거나 정당한 대리인인지를 확인합니다.</li>                  
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="set_11">
+                <div class="content_title">권익침해 구제방법</div>    
+                <div class="content">
+                    <p>정보주체는 개인정보침해로 인한 구제를 받기 위하여 개인정보분쟁조정위원회, 한국인터넷진흥원 개인정보침해신고센터 등에 분쟁해결이나 상담 등을 신청할 수 있습니다. 이 밖에 기타 개인정보침해의 신고, 상담에 대하여는 아래의 기관에 문의하시기 바랍니다.</p>
+                    <ul>
+                        <li>개인정보분쟁조정위원회: (국번없이) 1833-6972 (www.kopico.go.kr)</li>
+                        <li>개인정보침해신고센터: (국번없이) 118 (privacy.kisa.or.kr)</li>
+                        <li>대검찰청: (국번없이) 1301 (www.spo.go.kr)</li>
+                        <li>경찰청 사이버수사국: (국번없이) 182 (cyberbureau.police.go.kr)</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="set_12">
+                <div class="content_title">고지의 의무</div>    
+                <div class="content">
+                    <p>현 개인정보처리방침은 시행일로부터 적용되며, 개정이 필요한 경우 변경사항을 확인할 수 있도록 최소 7일 전부터 홈페이지 내 공지사항을 통하여 고지합니다.</p>
+                </div>
+            </div>            
+            
+            <div class="bottom" style="margin-bottom: 20px">공고일 : 2022년 07월 28일 <br/>
+                시행일 : 2022년 08월 4일</div>
+             
+             
+        </div>
+    </div>
+</body>
+    
+</html>

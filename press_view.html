@@ -1,0 +1,102 @@
+<?php
+	$mgrId = $_REQUEST["id"];
+	$bbsId = $_REQUEST["bbsId"];
+	$cateId = $_REQUEST["cateId"];
+
+	$cPage = $_REQUEST["cPage"];
+	$srchItem = $_REQUEST["srchItem"];
+	$srchItem2 = $_REQUEST["srchItem2"];
+	$srchWord = $_REQUEST["srchWord"];
+
+	/* 조회수 증가 -> class내에서 작업으로 수정 */
+//    $sql = "UPDATE TB_BBS SET bbs_view_no = bbs_view_no + 1 WHERE mgr_id='$mgrId' AND bbs_id='$bbsId' ";
+//    $rs = mysqli_query($conn, $sql);
+
+	$bbs_list = $bbs->getBbsList($arg_data);
+?>
+<script language="JavaScript">
+<!--
+function __submit() {
+	jsListBbs();
+}
+function jsListBbs(_bbsId) {
+	var _frm = document.mainForm;
+
+	_frm.submit();
+}
+function jsViewBbs(_bbsId) {
+	var _frm = document.mainForm;
+
+	_frm.bbsId.value = _bbsId;
+	_frm.url.value = "press_view";
+	_frm.action = "?press_view";
+	_frm.submit();
+}
+//-->
+</script>	
+
+  <section class="sub-visual sub-visual05">
+    <p class="typo" data-aos="fade-up">언론에 소개 된 <b>별따러가자와 라이더 로그</b></p>
+  </section>
+
+  <section class="subContainer">
+    <h4 class="doc-title mt-150" data-aos="fade-up">PRESS</h4>
+	<div class="contents-width">
+      <div class="board-view">
+        <div class="view-container">
+          <div class="titlearea">
+            <h4><?=$bbs_list['list'][0]['bbs_subject'];?></h4>
+            <ul class="date-view">
+              <li class="b-writer"><?=$bbs_list['list'][0]['bbs_name'];?></li>
+              <li class="b-date"><?=$bbs_list['list'][0]['create_date'];?></li>
+              <li class="b-view"><span>VIEW</span><?=$bbs_list['list'][0]['bbs_view_no'];?></li>
+            </ul>
+          </div>
+          <div class="board-content">
+			<?=$bbs_list['list'][0]['bbs_content'];?>
+          </div>
+
+          <div class="post-nav">
+            <ul>
+              <li class="post-prev">
+                <span>이전글</span>
+<?php	if($bbs_list['list'][0]['pre_idx']==0) { ?>
+					<p><?=$bbs_list['list'][0]['pre_subject'];?></p>
+<?php	} else { ?>
+					<p><a href="javascript:jsViewBbs('<?=$bbs_list['list'][0]['pre_idx'];?>');"><?=$bbs_list['list'][0]['pre_subject'];?></a></p>
+<?php	}  ?>
+              </li>
+              <li class="post-next">
+                <span>다음글</span>
+<?php	if($bbs_list['list'][0]['next_idx']==0) { ?>
+					<p><?=$bbs_list['list'][0]['next_subject'];?></p>
+<?php	} else { ?>
+					<p><a href="javascript:jsViewBbs('<?=$bbs_list['list'][0]['next_idx'];?>');"><?=$bbs_list['list'][0]['next_subject'];?></a></p>
+<?php	}  ?>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="align-right mt-20">
+          <button type="button" onclick="javascript: jsListBbs();" class="btn-go-list "><span>목록</span></button>
+        </div>
+
+      </div>
+
+
+    </div>
+  </section>
+<form name="mainForm" method="get" action="?">
+<input type="hidden" name="url" value="sub05">
+<input type="hidden" name="id" value="<?=$mgrId;?>">
+<input type="hidden" name="bbsId" value="">
+<input type="hidden" name="cateId" value="<?=$cateId;?>">						       		
+<input type="hidden" name="cPage" value="<?=$cPage;?>">
+<input type="hidden" name="cBlck" value="<?=$currBlck;?>">						       		
+<input type="hidden" name="subId" value="<?=$sub;?>">						       		
+<input type="hidden" name="srchItem2" value="<?=$srchItem2;?>">						       		
+<input type="hidden" name="srchItem" value="<?=$srchItem;?>">						       		
+<input type="hidden" name="srchWord" value="<?=$srchWord;?>">						       		
+</form>

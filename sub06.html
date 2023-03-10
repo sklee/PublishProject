@@ -1,0 +1,287 @@
+<?php
+	$timeout = "0";
+	//예제를 찾아보면 file_get_contents함수를 이용하는 것이 많다. 하지만 보통 웹서버에서 보안상 이유로 지원하지 않아서 
+	//curl를 사용하기로 한다.
+	function getFromUrl($url) {
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+		$result = curl_exec($ch);
+		curl_close($ch);
+		return $result;
+	}
+
+	//Get videos from channel by YouTube Data API
+	$API_key    = 'AIzaSyA7SBPvCkJx2ROtYzVn0C4bAFsDa6iSK6g';
+	$channelID  = 'UCQRJqtEcW4KZryGrqsW_Nzw';//이게 어디 숨어 있는거야??
+	$maxResults = 6;
+
+	$query = "https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&channelId=".$channelID."&maxResults=".$maxResults."&key=".$API_key."";
+
+	$json = getFromUrl($query);//curl 수행 결과, json 형식으로 받아 온다.
+	$array = json_decode($json, true); //이것을 php에서 사용하기 위해 array로 디코딩?
+?>
+
+  <section class="sub-visual sub-visual06">
+    <p class="typo" data-aos="fade-up">별따러 가자 <b>sns 채널</b></p>
+  </section>
+
+  <section class="subContainer">
+    <h4 class="doc-title  mt-100" data-aos="fade-up">SNS</h4>
+    <div class="contents-width pd">
+      <h5 class="sns-logo"><img src="img/logo_youtube.png" alt="YOUTUBE"></h5>
+	  <div class="youtube-list">
+<?php
+	for ($i =0; $i < count($array); $i++){
+		$title = $array['items'][$i]['snippet']['title'];
+		$date = $array['items'][$i]['snippet']['title'];
+		$thumb = $array['items'][$i]['snippet']['thumbnails']['high']['url'];
+		$description = $array['items'][$i]['snippet']['description'];
+		$publishedAt = $array['items'][$i]['snippet']['publishedAt'];
+		$videoId = $array['items'][$i]['id']['videoId'];
+
+		$query =  "https://www.googleapis.com/youtube/v3/videos?id=".$videoId."&key=AIzaSyA7SBPvCkJx2ROtYzVn0C4bAFsDa6iSK6g&part=statistics";
+		$json = getFromUrl($query);//curl 수행 결과, json 형식으로 받아 온다.
+		$array2 = json_decode($json, true); //이것을 php에서 사용하기 위해 array로 디코딩?
+		$likecount = $array2['items'][0]['statistics']['likeCount'];
+		$commentCount  = $array2['items'][0]['statistics']['commentCount'];
+
+		if($title){
+?>
+        <div class="item">
+          <a href="https://www.youtube.com/watch?v=<?=$videoId;?>" target="_blank">
+            <p class="thumb thumb-video">
+              <img src="<?=$thumb;?>" onerror="this.src='img/no_image.png'" alt="<?=$title;?>">
+            </p>
+            <div class="desc">
+              <p class="profile">
+                <img src="img/sns_profile.png" alt="profile">
+              </p>
+              <div class="cnt">
+                <strong class="dot"><?=$title;?></strong>
+                <p class="date">조회수 <?=$likecount;?>회 • <?=$date;?></p>
+              </div>
+            </div>
+          </a>
+        </div>
+<?php		} ?>
+<?php	} ?>
+<? /*
+        <div class="item">
+          <a href="#">
+            <p class="thumb">
+              <img src="img/press_thumb_sample.png" alt="video thumb">
+            </p>
+            <div class="desc">
+              <p class="profile">
+                <img src="img/sns_profile.png" alt="profile">
+              </p>
+              <div class="cnt">
+                <strong class="dot">이륜차 블랙박스 만드는 ‘별따러가자’,보험 사각지대 없앤다</strong>
+                <p class="date">조회수 432회 • 2020. 6. 22</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="item">
+          <a href="#">
+            <p class="thumb">
+              <img src="img/press_thumb_sample.png" alt="video thumb">
+            </p>
+            <div class="desc">
+              <p class="profile">
+                <img src="img/sns_profile.png" alt="profile">
+              </p>
+              <div class="cnt">
+                <strong class="dot">이륜차 블랙박스 만드는 ‘별따러가자’,보험 사각지대 없앤다</strong>
+                <p class="date">조회수 432회 • 2020. 6. 22</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="item">
+          <a href="#">
+            <p class="thumb">
+              <img src="img/press_thumb_sample.png" alt="video thumb">
+            </p>
+            <div class="desc">
+              <p class="profile">
+                <img src="img/sns_profile.png" alt="profile">
+              </p>
+              <div class="cnt">
+                <strong class="dot">이륜차 블랙박스 만드는 ‘별따러가자’,보험 사각지대 없앤다</strong>
+                <p class="date">조회수 432회 • 2020. 6. 22</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="item">
+          <a href="#">
+            <p class="thumb">
+              <img src="img/press_thumb_sample.png" alt="video thumb">
+            </p>
+            <div class="desc">
+              <p class="profile">
+                <img src="img/sns_profile.png" alt="profile">
+              </p>
+              <div class="cnt">
+                <strong class="dot">이륜차 블랙박스 만드는 ‘별따러가자’,보험 사각지대 없앤다</strong>
+                <p class="date">조회수 432회 • 2020. 6. 22</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="item">
+          <a href="#">
+            <p class="thumb">
+              <img src="img/press_thumb_sample.png" alt="video thumb">
+            </p>
+            <div class="desc">
+              <p class="profile">
+                <img src="img/sns_profile.png" alt="profile">
+              </p>
+              <div class="cnt">
+                <strong class="dot">이륜차 블랙박스 만드는 ‘별따러가자’,보험 사각지대 없앤다</strong>
+                <p class="date">조회수 432회 • 2020. 6. 22</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+*/ ?> 
+<?php /*
+	  <div class="pagination pagination-review">
+        <a href="#" class="page-prev"></a>
+
+        <a href="#" class="page-num current">1</a>
+        <a href="#" class="page-num">2</a>
+        <a href="#" class="page-num">3</a>
+        <a href="#" class="page-num">4</a>
+        <a href="#" class="page-num">5</a>
+
+        <a href="#" class="page-next"></a>
+      </div>
+*/ ?>
+    </div>
+<? /*
+<script type="text/javascript" src="/js/fb.min.js"></script> <!-- js 파일 로드 -->
+    <div class="contents-width pd mt-150">
+      <h5 class="sns-logo"><img src="img/logo_facebook.png" alt="FACEBOOk"></h5>
+      <div class="facebook-list">
+			<div id="fbfeedxxx"></div>
+
+		<div class="item type-img">
+          <a href="#">
+            <p class="thumb">
+              <img src="img/press_thumb_sample.png" alt="video thumb">
+            </p>
+            <div class="desc">
+              <p class="date"> 2020-09-16 </p>
+              <p class="title dot">디캠프 5월 디데이, Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nemo nobis
+                tenetur similique necessitatibus voluptatibus porro libero dolorum, quos minus laboriosam expedita ex
+                eum doloremque repellat at, fugiat voluptates. Tempore? 트’ 공동 우승</p>
+            </div>
+          </a>
+        </div>
+        <div class="item type-txt">
+          <a href="#">
+            <div class="desc">
+              <p class="date"> 2020-09-16 </p>
+              <p class="title dot">디캠프 5월 디데이, ‘별따러가자’·‘리하베스 트’ 공동 우승</p>
+            </div>
+          </a>
+        </div>
+        <div class="item type-img">
+          <a href="#">
+            <p class="thumb">
+              <img src="img/press_thumb_sample.png" alt="video thumb">
+            </p>
+            <div class="desc">
+              <p class="date"> 2020-09-16 </p>
+              <p class="title dot">디캠프 5월 디데이, Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nemo nobis
+                tenetur similique necessitatibus voluptatibus porro libero dolorum, quos minus laboriosam expedita ex
+                eum doloremque repellat at, fugiat voluptates. Tempore? 트’ 공동 우승</p>
+            </div>
+          </a>
+        </div>
+        <div class="item type-txt">
+          <a href="#">
+            <div class="desc">
+              <p class="date"> 2020-09-16 </p>
+              <p class="title dot">디캠프 Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio accusantium itaque
+                quo quidem labore sed molestiae amet? Quos, quam. Ullam similique beatae maiores magni ipsa sequi
+                tenetur, soluta quas laudantium! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum
+                voluptatibus assumenda provident distinctio dolores ea ad facilis doloribus odit fuga perspiciatis
+                magnam, adipisci rem commodi ut neque, eaque tempora at. 디데이, ‘별따러가자’·‘리하베스 트’ 공동 우승</p>
+            </div>
+          </a>
+        </div>
+        <div class="item type-txt">
+          <a href="#">
+            <div class="desc">
+              <p class="date"> 2020-09-16 </p>
+              <p class="title dot">디캠프 Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio accusantium itaque
+                quo quidem labore sed molestiae amet? Quos, quam. Ullam similique beatae maiores magni ipsa sequi
+                tenetur, soluta quas laudantium! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum
+                voluptatibus assumenda provident distinctio dolores ea ad facilis doloribus odit fuga perspiciatis
+                magnam, adipisci rem commodi ut neque, eaque tempora at. 디데이, ‘별따러가자’·‘리하베스 트’ 공동 우승</p>
+            </div>
+          </a>
+        </div>
+        <div class="item type-txt">
+          <a href="#">
+            <div class="desc">
+              <p class="date"> 2020-09-16 </p>
+              <p class="title dot">디캠프 Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio accusantium itaque
+                quo quidem labore sed molestiae amet? Quos, quam. Ullam similique beatae maiores magni ipsa sequi
+                tenetur, soluta quas laudantium! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum
+                voluptatibus assumenda provident distinctio dolores ea ad facilis doloribus odit fuga perspiciatis
+                magnam, adipisci rem commodi ut neque, eaque tempora at. 디데이, ‘별따러가자’·‘리하베스 트’ 공동 우승</p>
+            </div>
+          </a>
+        </div>
+        <div class="item type-txt">
+          <a href="#">
+            <div class="desc">
+              <p class="date"> 2020-09-16 </p>
+              <p class="title dot">디캠프 Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio accusantium itaque
+                quo quidem labore sed molestiae amet? Quos, quam. Ullam similique beatae maiores magni ipsa sequi
+                tenetur, soluta quas laudantium! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum
+                voluptatibus assumenda provident distinctio dolores ea ad facilis doloribus odit fuga perspiciatis
+                magnam, adipisci rem commodi ut neque, eaque tempora at. 디데이, ‘별따러가자’·‘리하베스 트’ 공동 우승</p>
+            </div>
+          </a>
+        </div>
+        <div class="item type-txt">
+          <a href="#">
+            <div class="desc">
+              <p class="date"> 2020-09-16 </p>
+              <p class="title dot">디캠프 Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio accusantium itaque
+                quo quidem labore sed molestiae amet? Quos, quam. Ullam similique beatae maiores magni ipsa sequi
+                tenetur, soluta quas laudantium! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum
+                voluptatibus assumenda provident distinctio dolores ea ad facilis doloribus odit fuga perspiciatis
+                magnam, adipisci rem commodi ut neque, eaque tempora at. 디데이, ‘별따러가자’·‘리하베스 트’ 공동 우승</p>
+            </div>
+          </a>
+        </div>
+
+
+      </div>
+*/ ?>
+<?php /*
+	  <div class="pagination pagination-review">
+        <a href="#" class="page-prev"></a>
+
+        <a href="#" class="page-num current">1</a>
+        <a href="#" class="page-num">2</a>
+        <a href="#" class="page-num">3</a>
+        <a href="#" class="page-num">4</a>
+        <a href="#" class="page-num">5</a>
+
+        <a href="#" class="page-next"></a>
+      </div>
+*/ ?>
+    </div>
+  </section>
+

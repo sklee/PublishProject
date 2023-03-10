@@ -1,0 +1,128 @@
+<?php
+	$sql = "SELECT pop_seq, width, height, top_pos, left_pos, pop_type,  title, sub_title, contents, scrollbars FROM TB_POP WHERE DATE_FORMAT(now(),'%Y/%m/%d') BETWEEN DATE_FORMAT(start_date,'%Y/%m/%d') AND DATE_FORMAT(end_date,'%Y/%m/%d') ";
+
+	$result_popup = mysqli_query($conn, $sql) or die("select error : ".mysqli_error());
+	$result_popup2 = mysqli_query($conn, $sql) or die("select error : ".mysqli_error());
+?>
+
+<script type="text/javascript" language="JavaScript">
+function jsGetPopupCookie(cookieName) {
+	var search = cookieName + "=";
+	if (document.cookie.length > 0) {
+		offset = document.cookie.indexOf(search);
+		if (offset != -1) {
+			offset += search.length;
+			end = document.cookie.indexOf(";", offset);
+			if (end == -1) {
+				end = document.cookie.length;
+			}
+
+			return unescape(document.cookie.substring(offset, end));
+		}
+	}
+}
+
+function jsOpenPopup() {
+<?php
+    while($row_popup = mysqli_fetch_array($result_popup)){
+		$popup_seq=$row_popup[pop_seq];
+		$popup_width=$row_popup[width];
+		$popup_height=$row_popup[height]+20;
+		$popup_top_dis=$row_popup[top_pos];
+		$popup_left_dis=$row_popup[left_pos];
+		$popup_pop_type=$row_popup[pop_type];
+		$popup_scroll_yn=$row_popup[scrollbars];
+		$popup_content=$row_popup[contents];
+?>
+        if (jsGetPopupCookie("pop<?=$popup_seq?>") != "done<?=$popup_seq?>") { 
+<?php		if($popup_pop_type=="0") {	?>
+				var z = window.open("popup.php?pop_seq=<?=$popup_seq?>", "pop<?=$popup_seq?>", "toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, width=<?=$popup_width?>, height=<?=$popup_height?>, top=<?=$popup_top_dis?>, left=<?=$popup_left_dis?>, scrollbars=<?=$popup_scroll_yn?>");
+        z.focus();
+<?php		} else if($popup_pop_type=="1") {	?>
+				document.getElementById('popup_layer<?=$popup_seq?>').style.visibility = "visible";
+<?php		} else if($popup_pop_type=="2") {	?>
+				document.getElementById("dwindow<?=$popup_seq?>").style.display=''
+				document.getElementById("dwindow<?=$popup_seq?>").style.width=initialwidth="<?=$popup_width?>"+"px"
+				document.getElementById("dwindow<?=$popup_seq?>").style.height=initialheight="<?=$popup_height?>"+"px"
+				document.getElementById("dwindow<?=$popup_seq?>").style.left="<?=$popup_left_dis?>"
+				document.getElementById("dwindow<?=$popup_seq?>").style.top=ns6? window.pageYOffset*1+"<?=$popup_top_dis?>"+"px" : iecompattest().scrollTop*1+"<?=$popup_top_dis?>"+"px"
+<?php		}	?>
+        }
+<?php }	?>
+}
+
+function jsSetCookie( name, value, expiredays ) { 
+	var todayDate = new Date(); 
+
+	todayDate.setDate( todayDate.getDate() + expiredays ); 
+	document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";";
+} 
+
+function jsClosePopupWindow(theforms, seq){
+	var theform=theforms;
+
+	if ( theform.Notice.checked ) { 
+		jsSetCookie( "pop"+seq, "done"+seq , 1); 
+	}
+
+	document.getElementById('popup_layer'+seq).style.visibility = "hidden";
+	document.getElementById('dwindow'+seq).style.visibility = "hidden";
+} 
+
+function setCookie( name, value, expiredays ){
+	var todayDate = new Date();
+
+	todayDate.setDate( todayDate.getDate() + expiredays );
+	document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+}
+
+function getCookie( name ){
+	var nameOfCookie = name + "=";
+	var x = 0;
+
+	while ( x <= document.cookie.length ){
+		var y = (x+nameOfCookie.length);
+
+		if ( document.cookie.substring( x, y ) == nameOfCookie ) {
+			if ( (endOfCookie=document.cookie.indexOf( ";", y )) == -1 )
+				endOfCookie = document.cookie.length;
+			return unescape( document.cookie.substring( y, endOfCookie ) );
+		}
+		x = document.cookie.indexOf( " ", x ) + 1;
+		if ( x == 0 )
+			break;
+	}
+	return "";
+}
+//-->
+</script>
+<?
+   while($row_popup2 = mysqli_fetch_array($result_popup2)){
+			$popup_seq = $row_popup2['pop_seq'];
+			$popup_width = $row_popup2['width'];
+			$popup_height = $row_popup2['height']+20;
+			$popup_top_dis = $row_popup2['top_pos'];
+			$popup_left_dis = $row_popup2['left_pos'];
+			$popup_pop_type = $row_popup2['pop_type'];
+			$popup_scroll_yn = $row_popup2['scrollbars'];
+			$popup_content = $row_popup2['contents'];
+?>
+<div id="popup_layer<?=$popup_seq?>" style="position:absolute; width:<?=$popup_width?>px; height:<?=$popup_height?>px; top:<?=$popup_top_dis?>px; left:<?=$popup_left_dis?>px; visibility:hidden; background-color: #CCCCCC; z-index:99999;border:1px solid darkgray;">
+  <?=$popup_content?>
+  <div id="bot<?=$popup_seq?>" align=right style="position:absolute; bottom:0px; right:0px; background-color: #CCCCCC; width:<?=$popup_width?>px;">
+    <form name="pop_layer_form_<?=$popup_seq?>">
+      <input type=CHECKBOX name="Notice" value=""> 오늘 더 이상 열지 않음
+	  <a href="javascript:jsClosePopupWindow(document.pop_layer_form_<?=$popup_seq?>, <?=$popup_seq?>)">[닫기]</a>
+    </form>
+  </div>
+</div>
+<div id="dwindow<?=$popup_seq?>" style="display:none; position:absolute;top:<?=$popup_top_dis?>; left:<?=$popup_left_dis?>; width:<?=$popup_width?>px; height:<?=$popup_height?>px; z-index:9999" onMousedown="initializedrag(event, '<?=$popup_seq?>')" onMouseup="stopdrag('<?=$popup_seq?>')" onSelectStart="return false" ondragstart="return false">
+  <?=$popup_content?>
+  <div id="bot_dwindow<?=$popup_seq?>" align=right style="position:absolute; bottom:0px; right:0px; background-color: #CCCCCC; width:<?=$popup_width?>px;">
+    <form name="dwindow_layer_form_<?=$popup_seq?>">
+      <input type=CHECKBOX name="Notice" value=""> 오늘 더 이상 열지 않음
+	  <a href="javascript:jsClosePopupWindow(document.dwindow_layer_form_<?=$popup_seq?>, <?=$popup_seq?>)">닫기</a>
+    </form>
+  </div>
+</div>
+<?	} ?>

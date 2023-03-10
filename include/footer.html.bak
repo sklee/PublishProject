@@ -1,0 +1,41 @@
+
+	<footer class="section footer fp-auto-height" data-anchor="footer">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html" class="logo-main">
+            <img src="img/logo_gray.png" alt="별따러가자">
+          </a>
+          <a href="#" class="logo-rider">
+            <img src="img/logo_riderlog.png" alt="라이더로그">
+          </a>
+        </div>
+		<div class="footer-contact">
+<?php /*
+          <ul class="policy">
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">개인정보처리방침</a></li>
+            <li><a href="#">이메일무단수집거부</a></li>
+            <li><a href="#">제휴문의</a></li>
+            <li><a href="#">사이트맵</a></li>
+            <li class="youtube"><a href="#">YouTube</a></li>
+          </ul>
+*/ ?>
+		  <ul class="contact">
+            <li>㈜ 별따러가자</li>
+            <li>대표이사 : 박추진</li>
+            <li>본사 : 서울특별시 강서구 마곡중앙10로70 LG사이언스파크 E10동 지하1층 오픈랩 6호</li>
+            <li>전화번호 : 02-6933-6272</li>
+            <li>이메일 : byuldda@star-pickers.com</li>
+          </ul>
+          <p class="copyrights">copyrightⓒ STAR-PICKERS All rights reserved.</p>
+        </div>
+
+        <a href="#section01" data-menuanchor="section01" class="btn-top"><span class="blind">상단이동</span></a>
+      </div>
+
+    </footer>
+  </div>
+
+</body>
+
+</html>
