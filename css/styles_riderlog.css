@@ -103,3 +103,44 @@ h6 {
   font-weight: bold;
   margin: 1rem 0;
 }
+
+.board {
+  /* border: 1px solid #ccc; */
+  padding: 10px;
+}
+
+.board ul {
+  list-style: none;
+  padding: 0;
+  flex: 1;
+  margin-right: 20px;
+}
+
+.board li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding-left: 6%;
+  padding-right: 6%;
+  padding-bottom: 2%;
+  margin-bottom: 3%;
+}
+
+.board li:last-child {
+  /* border-bottom: none; */
+}
+
+.board li a {
+  color: #333;
+  text-decoration: none;
+}
+
+.board li a:hover {
+  text-decoration: underline;
+}
+
+.board .date {
+  font-size: 14px;
+  color: #999;
+}
