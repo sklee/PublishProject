@@ -64,7 +64,7 @@ a.button-link {
   text-decoration: none;
   padding: 8px 16px;
 }
-
+/* 
 nav ul {
   display: flex;
 }
@@ -80,7 +80,7 @@ nav a {
 
 nav a:hover {
   color: #ccc;
-}
+} */
 
 footer {
   background-color: #fff;
@@ -117,9 +117,6 @@ h6 {
 }
 
 .board li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   border-bottom: 1px solid #ccc;
   padding-left: 6%;
   padding-right: 6%;
@@ -134,13 +131,10 @@ h6 {
 .board li a {
   color: #333;
   text-decoration: none;
+  font-size: 1.2vw;
+  font-weight: bold;
 }
 
 .board li a:hover {
   text-decoration: underline;
-}
-
-.board .date {
-  font-size: 14px;
-  color: #999;
 }
