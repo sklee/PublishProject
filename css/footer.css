@@ -1,0 +1,32 @@
+/* #wrapper {
+  height: auto;
+  min-height: 100%;
+  padding-bottom: 226px;
+}
+footer {
+  height: 226px;
+  position: relative;
+  transform: translateY(-100%);
+} */
+.footer_logo {
+  width: 126px;
+  height: 66px;
+  margin-right: 24px;
+}
+.footer_box {
+  font-size: 14px;
+  font-family: pretendard;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+footer {
+  /* position: relative;
+  transform: translateY(-100%); */
+  position: absolute;
+  margin-bottom: 80px;
+  height: 226px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

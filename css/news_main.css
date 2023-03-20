@@ -1,0 +1,77 @@
+.wrapper {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  height: 1360px;
+  min-height: 100%;
+  padding-top: 80px;
+  font-family: "pretendard";
+}
+.wrapper .main_total {
+  width: auto;
+  font-size: 20px;
+  margin-left: 222px;
+  margin-top: 87px;
+  display: inline-block;
+}
+.wrapper .main_search {
+  width: 70%;
+  display: inline-block;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+}
+/* .wrapper select {
+  width: 108px;
+  height: 43px;
+  padding: 0.8em 0.5em;
+  border: 1px solid #999;
+  font-family: inherit;
+  border-radius: 0px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+} */
+
+.wrapper ul {
+  list-style: none;
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  margin-top: 28px;
+}
+
+.wrapper li {
+  width: 60%;
+  border-bottom: 1px solid #ccc;
+  padding-left: 6%;
+  padding-right: 6%;
+  padding-bottom: 7px;
+  margin-bottom: 3%;
+}
+
+.wrapper li a {
+  color: #151515;
+  text-decoration: none;
+  font-size: 1.2vh;
+  font-weight: bold;
+}
+
+.wrapper li a:hover {
+  text-decoration: underline;
+}
+
+.wrapper .date {
+  width: 25%;
+  font-size: 5px;
+  color: #151515;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  font-size: 0.9vh;
+  margin-right: 0px;
+}

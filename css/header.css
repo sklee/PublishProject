@@ -1,0 +1,46 @@
+.header_logo {
+  left: 30px;
+  position: absolute;
+  width: 95px;
+  padding-top: 13px;
+}
+
+header {
+  background-color: #fff;
+  color: #212121;
+  padding: 0rem;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+}
+header .header_box {
+  width: auto;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 12px;
+  font-weight: bold;
+  right: 20px;
+  position: absolute;
+  top: 30px;
+}
+
+header .header_box .header_ul {
+  float: right;
+  justify-content: flex-end;
+  width: auto;
+  display: flex;
+  list-style: none;
+}
+
+header a.button-link {
+  background-color: #fff;
+  color: #212121;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 8px 16px;
+}
