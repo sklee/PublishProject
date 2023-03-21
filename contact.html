@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RiderLog</title>
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div style="width: auto; display: flex; position: static">
+        <img class="header_logo" src="img_2/logo.png" alt="Image 2" />
+        <div class="header_box">
+          <ul class="header_ul">
+            <li><a href="#" class="button-link">About</a></li>
+            <li><a href="#" class="button-link">Rider Log</a></li>
+            <li><a href="#" class="button-link">News</a></li>
+            <li><a href="#" class="button-link">Notice</a></li>
+            <li><a href="#" class="button-link">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main style="height: 1544px">
+      <div class="wrapper">
+        <div
+          style="
+            display: flex;
+            align-items: flex-start;
+            margin-top: 2%;
+            padding-left: 7%;
+            padding-right: 6%;
+          "
+        >
+          문의하기
+        </div>
+
+        <div
+          class="board"
+          style="
+            display: flex;
+            flex-wrap: wrap;
+            padding-left: 6%;
+            padding-right: 6%;
+          "
+        >
+          <ul style="margin-bottom: 0">
+            <li style="display: flex; flex-direction: column">
+              <div style="display: flex; width: 100%">
+                <div style="width: 15%">
+                  <div></div>
+                  <div style="font-size: 0.09vw">성함</div>
+                </div>
+                <div
+                  style="
+                    width: 85%;
+                    font-size: 5px;
+                    display: flex;
+                    justify-content: left;
+                    align-items: center;
+                  "
+                >
+                  <input
+                    type="text"
+                    placeholder="성함"
+                    style="
+                      border: none;
+                      outline: none;
+                      font-size: 0.9vw;
+                      color: #abadb0;
+                      font-family: pretendard;
+                    "
+                  />
+                </div>
+              </div>
+            </li>
+
+            <li style="display: flex; flex-direction: column">
+              <div style="display: flex; width: 100%">
+                <div style="width: 15%">
+                  <div></div>
+                  <div style="font-size: 0.09vw">연락처</div>
+                </div>
+                <div
+                  style="
+                    width: 85%;
+                    font-size: 5px;
+                    display: flex;
+                    justify-content: left;
+                    align-items: center;
+                  "
+                >
+                  <input
+                    type="text"
+                    placeholder="연락처"
+                    style="
+                      border: none;
+                      outline: none;
+                      font-size: 0.9vw;
+                      color: #abadb0;
+                      font-family: pretendard;
+                    "
+                  />
+                </div>
+              </div>
+            </li>
+
+            <li
+              style="
+                display: flex;
+                flex-direction: column;
+                border-bottom: none;
+                margin-bottom: 0px;
+              "
+            >
+              <div style="display: flex; width: 100%">
+                <div style="width: 100%">
+                  <div style="font-size: 0.09vw">문의내용</div>
+                </div>
+                <div
+                  style="
+                    width: 85%;
+                    font-size: 5px;
+                    display: flex;
+                    justify-content: left;
+                    align-items: center;
+                  "
+                ></div>
+              </div>
+            </li>
+          </ul>
+
+          <ul>
+            <li style="display: flex; flex-direction: column">
+              <div style="display: flex; width: 100%">
+                <div style="width: 15%">
+                  <div></div>
+                  <div style="font-size: 0.09vw">기업/단체명</div>
+                </div>
+                <div
+                  style="
+                    width: 85%;
+                    font-size: 5px;
+                    display: flex;
+                    justify-content: left;
+                    align-items: center;
+                  "
+                >
+                  <input
+                    type="text"
+                    placeholder="기업/단체명"
+                    style="
+                      border: none;
+                      outline: none;
+                      font-size: 0.9vw;
+                      color: #abadb0;
+                      font-family: pretendard;
+                    "
+                  />
+                </div>
+              </div>
+            </li>
+            <li
+              style="display: flex; flex-direction: column; margin-bottom: 0px"
+            >
+              <div style="display: flex; width: 100%">
+                <div style="width: 15%">
+                  <div></div>
+                  <div style="font-size: 0.09vw">이메일</div>
+                </div>
+                <div
+                  style="
+                    width: 85%;
+                    font-size: 5px;
+                    display: flex;
+                    justify-content: left;
+                    align-items: center;
+                  "
+                >
+                  <input
+                    type="text"
+                    placeholder="이메일"
+                    style="
+                      border: none;
+                      outline: none;
+                      font-size: 0.9vw;
+                      color: #abadb0;
+                      font-family: pretendard;
+                    "
+                  />
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div style="width: 97.8%; margin-bottom: 4%">
+            <textarea
+              type="text"
+              cols="30"
+              rows="4"
+              name="text"
+              style="
+                width: 100%;
+                outline: none;
+                border: none;
+                border-bottom: 1px solid #ccc;
+                display: flex;
+                justify-content: left;
+                align-items: center;
+                font-size: 0.9vw;
+                color: #abadb0;
+                font-family: pretendard;
+              "
+            ></textarea>
+          </div>
+          <div style="width: 100%; margin-bottom: 5%; display: flex">
+            <div style="width: 80%">
+              <input type="checkbox" name="agree" id="agree" />개인정보 수집 및
+              이용약관에 동의합니다.
+            </div>
+            <div
+              style="
+                width: 20%;
+                display: flex;
+                justify-content: end;
+                padding-right: 2%;
+              "
+            >
+              <button
+                style="
+                  width: 426px;
+                  height: 41px;
+                  background-color: #151515;
+                  color: #ffffff;
+                "
+              >
+                문의하기
+              </button>
+            </div>
+          </div>
+          <div style="width: 100%; margin-bottom: 5%; display: flex">
+            <img src="img_2/map.png" alt="Image 4" style="width: 100%" />
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer style="width: 100%">
+      <div
+        style="
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        "
+      >
+        <div>
+          <img class="footer_logo" src="img_2/logo.png" alt="Image 2" />
+        </div>
+        <div class="footer_box">
+          <div style="margin-bottom: 12px">
+            (주) 별따러가자 (대표이사: 박추진) | 서울특별시 영등포구 의사당대로
+            83, 서울핀테크랩 4층 110호 | 전화번호 : 070-4415-2662 | 이메일 :
+            support@star-pickers.com | copyrightⓒ STAR-PICKERS All rights
+            reserved.
+            <br />
+          </div>
+          <span>
+            <a href="#">서비스용 개인 정보처리 방침</a> |
+            <a href="#">위치기반 서비스 이용 약관</a>
+          </span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

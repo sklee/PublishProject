@@ -1,0 +1,128 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
+
+.wrapper {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  font-family: "pretendard";
+}
+
+.img_logo {
+  left: 30px;
+  position: absolute;
+  width: 95px;
+  padding-top: 13px;
+}
+.wrapper .img_2 {
+  width: calc(100% / 3);
+  height: calc(100% / 3);
+  padding: 0px;
+  margin-top: 0px;
+  display: block;
+}
+
+@media screen and (width: 640px) {
+  .wrapper .img_2 {
+    width: calc(100% / 3);
+    height: calc(100% / 3);
+    padding: 0px;
+    margin-top: -4px;
+    display: block;
+  }
+}
+
+.wrapper .thum {
+  width: 100%;
+  height: calc(100% / 3);
+  display: block;
+}
+
+@media screen and (width: 1920px) {
+  .wrapper .thum {
+    width: 100%;
+    height: calc(100% / 3);
+  }
+}
+
+header {
+  background-color: #fff;
+  color: #212121;
+  padding: 0rem;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  top: 0;
+}
+
+a.button-link {
+  background-color: #fff;
+  color: #212121;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 8px 16px;
+}
+/* 
+nav ul {
+  display: flex;
+}
+
+nav li {
+  margin-left: 2rem;
+}
+
+nav a {
+  color: #212121;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #ccc;
+} */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.board {
+  /* border: 1px solid #ccc; */
+  padding: 10px;
+}
+
+.board ul {
+  list-style: none;
+  padding: 0;
+  flex: 1;
+  margin-right: 20px;
+}
+
+.board li {
+  border-bottom: 1px solid #ccc;
+  padding-left: 6%;
+  padding-right: 6%;
+  padding-bottom: 2%;
+  margin-bottom: 3%;
+}
+
+.board li:last-child {
+  /* border-bottom: none; */
+}
+
+.board li a {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.2vw;
+  font-weight: bold;
+}
+
+.board li a:hover {
+  text-decoration: underline;
+}
