@@ -8,19 +8,47 @@
   font-family: "pretendard";
 }
 .wrapper .main_total {
-  width: auto;
+  width: 50%;
   font-size: 20px;
-  margin-left: 222px;
+  margin-left: 20%;
   margin-top: 87px;
   display: inline-block;
 }
 .wrapper .main_search {
   width: 70%;
   display: inline-block;
+  margin-right: 20%;
   display: flex;
   justify-content: end;
   align-items: end;
 }
+
+.wrapper .pageNumber {
+  display: flex;
+  justify-content: center;
+}
+.wrapper .pageNumber a {
+  color: #dfe0e1;
+  text-decoration: none;
+  margin: 10px;
+  font-size: 14px;
+}
+
+.searchBtn {
+  width: 126px;
+  height: 38px;
+  background-color: #151515;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.searchInput {
+  width: 276px;
+  height: 31px;
+  border-color: #dfe0e1;
+}
+
 /* .wrapper select {
   width: 108px;
   height: 43px;

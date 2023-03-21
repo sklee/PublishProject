@@ -5,36 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RiderLog</title>
     <link rel="stylesheet" href="css/main_style.css" />
-    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css"
+    />
   </head>
   <body>
-    <header style="z-index: 9999;">
-      <div style="width: auto; display: flex; position: static; ">
-        <img
-          class="img_logo"
-          src="img_2/logo.png"
-          alt="Image 2"       
-        />
-        <div
-          style="
-            width: auto;
-            flex-wrap: wrap;
-            align-items: center;
-            font-size: 12px;
-            font-weight: bold;    
-            right: 20px;  
-            position: absolute;     
-            top: 30px;      
-          "
-        >
-          <ul
-          style="
-            float: right;
-            justify-content: flex-end;
-            width: auto;
-            display: flex;  
-            list-style: none;      
-          ">
+    <header>
+      <div style="width: auto; display: flex; position: static">
+        <img class="header_logo" src="img_2/logo.png" alt="Image 2" />
+        <div class="header_box">
+          <ul class="header_ul">
             <li><a href="#" class="button-link">About</a></li>
             <li><a href="#" class="button-link">Rider Log</a></li>
             <li><a href="#" class="button-link">News</a></li>
@@ -42,74 +27,90 @@
             <li><a href="#" class="button-link">Contact</a></li>
           </ul>
         </div>
-        </div>
+      </div>
     </header>
 
     <main>
       <div class="wrapper">
         <div>
           <img src="img_2/RiderLog01.png" alt="Image 1" class="thum" />
-          <div style="width:100%; display: flex; ">
-            
-            <div style="position: relative; ">
-              <img src="img_2/RiderLog02_01.png" alt="Image 2"style="width: 100%; z-index: -1;"/>              
-            </div>
-            
-            <div style="position: relative; ">              
-              <img src="img_2/RiderLog02_02.png" alt="Image 2"style="width: 100%; z-index: -1;"/>              
+          <div style="width: 100%; display: flex">
+            <div style="position: relative">
+              <img
+                src="img_2/RiderLog02_01.png"
+                alt="Image 2"
+                style="width: 100%; z-index: -1"
+              />
             </div>
 
-            <div style="position: relative; ">
-              <img src="img_2/RiderLog02_03.png" alt="Image 2"style="width: 100%; z-index: -1;"/>              
+            <div style="position: relative">
+              <img
+                src="img_2/RiderLog02_02.png"
+                alt="Image 2"
+                style="width: 100%; z-index: -1"
+              />
+            </div>
+
+            <div style="position: relative">
+              <img
+                src="img_2/RiderLog02_03.png"
+                alt="Image 2"
+                style="width: 100%; z-index: -1"
+              />
             </div>
           </div>
         </div>
 
-        <div style="display: flex;align-items: center;justify-content: center; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; height: 150px;">
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
+              sans-serif;
+            height: 150px;
+          "
+        >
           <h1>
-            <strong style="font-family: pretendard;">
+            <strong style="font-family: pretendard">
               안전운행 유도, 정확한 운행 이력 DATA의 지속적 확보
             </strong>
           </h1>
         </div>
 
         <div>
-            <img src="img_2/RiderLog03.png" alt="Image 3" class="thum"/>
+          <img src="img_2/RiderLog03.png" alt="Image 3" class="thum" />
         </div>
         <div>
-          <img src="img_2/RiderLog04.png" alt="Image 4" class="thum"/>
+          <img src="img_2/RiderLog04.png" alt="Image 4" class="thum" />
         </div>
-
       </div>
     </main>
 
-    <footer>
-      <div>
-        <div style="width: 100%; display: flex; justify-content: space-around;">
-          <img
-            class="cpLogo"
-            src="img_2/logo.png"
-            alt="Image 2"
-            class="img_2"
-          /><div
-            style="
-              width: 80%;
-              display: flex;
-              flex-wrap: wrap;
-              align-items: center;
-              font-size: 12px;
-              font-weight: bold;
-              font-family: pretendard;
-            ">          
+    <footer style="width: 100%">
+      <div
+        style="
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        "
+      >
+        <div>
+          <img class="footer_logo" src="img_2/logo.png" alt="Image 2" />
+        </div>
+        <div class="footer_box">
+          <div style="margin-bottom: 12px">
             (주) 별따러가자 (대표이사: 박추진) | 서울특별시 영등포구 의사당대로
             83, 서울핀테크랩 4층 110호 | 전화번호 : 070-4415-2662 | 이메일 :
             support@star-pickers.com | copyrightⓒ STAR-PICKERS All rights
             reserved.
             <br />
-            <span style="width:100%; font-family: pretendard;">
-              <a href="#">서비스용 개인 정보처리 방침</a> | <a href="#">위치기반 서비스 이용 약관</a> </span> 
-            </div>
           </div>
+          <span>
+            <a href="#">서비스용 개인 정보처리 방침</a> |
+            <a href="#">위치기반 서비스 이용 약관</a>
+          </span>
         </div>
       </div>
     </footer>

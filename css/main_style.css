@@ -82,18 +82,6 @@ nav a:hover {
   color: #ccc;
 } */
 
-footer {
-  background-color: #fff;
-  height: 10%;
-  color: #212121;
-  padding: 1rem;
-}
-
-footer .cpInfo {
-  text-align: left;
-  font-size: 2px;
-}
-
 h1,
 h2,
 h3,
